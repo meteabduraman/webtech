@@ -55,3 +55,7 @@ e.g.: in case of a GET, usually the body contains a JSON representation of the r
 A `GET` request is an **idempotent** operation (if a client performs it multiple times, it should have the same outcome, not modifying the application's state). Operations that modify the application state can also be performed:
 
 ![API interaction - POST](./assets/API%20interaction%20-%20POST.png)
+
+### In the lab
+
+We created our first Express Node.js API (checkout [index.js](./index.js)) as a quick sneak peek on how HTTP communication works. Deep dives will follow in the *Back-end* part of the lab. 🤓
