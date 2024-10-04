@@ -33,13 +33,11 @@ jobs:
         if: success()
         uses: dawidd6/action-send-mail@v3.12.0
         with:
-          connection_url: ${{secrets.CONNECTION_URL}}
           server_address: ${{secrets.SERVER_ADDRESS}}
-          server_port: ${{secrets.SERVER_PORT}}
-          secure: true
+          server_port: 465
           username: ${{secrets.USERNAME}}
           password: ${{secrets.PASSWORD}}
-          subject: 
+          subject: ${{secrets.SUBJECT}}
           to: ${{secrets.TO}}
           from: ${{secrets.FROM}}
           html_body: file://build/index.html
