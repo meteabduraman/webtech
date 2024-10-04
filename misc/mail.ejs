@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update in <%= context.repo.owner %>/<%= context.repo.repo %></title>
+    <style>
+        p, h1, a {
+            margin: 0;
+            color: #1E1E1E;
+            text-decoration: none;
+        }
+
+        a > span {
+            text-decoration: underline;
+            text-underline-offset: 4px;;
+        }
+
+        .icon {
+            vertical-align: text-top;
+        }
+
+        a {
+            white-space: nowrap;
+            vertical-align: baseline;
+        }
+
+        main, .header, .change-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', 'Arial', sans-serif;
+        }
+
+        main {
+            margin: 100px 0px;
+            gap: 64px;
+        }
+
+        .header {
+            gap: 24px;
+        }
+
+        .change-container {
+            gap: 8px;
+        }
+
+        .header > img {
+            max-width: 250px;
+            border-radius: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .author > img {
+            border-radius: 100%;
+        }
+
+        .change {
+            max-width: 500px;
+            white-space: initial;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d9d9d9;
+            padding: 24px;
+            gap: 8px;
+        }
+        
+        .change .state {
+            padding: 8px 12px;
+            background-color: #8957E5;
+            color: white;
+            border-radius: 100px;
+            text-transform: capitalize;
+        }
+
+        .change-container .link {
+            width: 20px;
+        }
+
+        .disclaimer {
+            max-width: 500px;
+            text-align: center;
+        }
+
+        @media screen and (max-width: 400px) {
+            .repo > .username {
+                display: none;
+            }
+
+            .change {
+                flex-direction: column;
+            }
+
+            .change {
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="header">
+            <img src="./assets/logo-2.png" alt="">
+
+            <h1>New update in 
+                <a href="https://github.com/<%= context.repo.owner %>/<%= context.repo.repo %>">
+                    <img class="icon" width="24px" src="./assets/github.svg" alt="">
+                    <span class="repo">
+                        <span class="username"><%= context.repo.owner %></span>
+                        /
+                        <span><%= context.repo.repo %></span>
+                    </span>
+                </a>
+            </h1>
+    
+            <div class="author">
+                <img src="https://avatars.githubusercontent.com/u/48653383?v=4&size=32" alt="">
+                <p><%= context.repo.owner %></p>
+            </div>
+        </div>
+
+        <div class="change-container">
+            <a href="<%= prLink %>" class="change">
+                <p class="state"><%= prState %></p>
+    
+                <p><%= prTitle %></p>
+            </a>
+    
+            <a href="<%= prLink %>/files">
+                <span>View changes</span>
+                <img class="icon" width="16px" src="./assets/external-link.svg" alt="">
+            </a>
+        </div>
+
+        <p class="disclaimer">
+            This is an automated email notification sent to students of Webtech@CSIE '24. Feel free to reply to this email or via Github Comments for any questions.
+        </p>
+    </main>
+</body>
+</html>
