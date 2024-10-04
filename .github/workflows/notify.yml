@@ -41,5 +41,5 @@ jobs:
           subject: ${{secrets.SUBJECT}}
           to: ${{secrets.TO}}
           from: ${{secrets.FROM}}
-          html_body: file://build/index.html
+          html_body: file://misc/mail.html
           cc: ${{secrets.CC}}
