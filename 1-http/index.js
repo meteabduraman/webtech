@@ -15,6 +15,18 @@ app.get('/say-hello', (req, res) => {
     res.status(200).send('Hello back');
 });
 
+// define another endpoint of the API
+// GET /accounts should respond with a collection of accounts
+app.get('/accounts', (req, res) => {
+    // instead of responding with plaintext
+    // a JSON response can be sent simply via `.json()`
+    res.status(200).json({
+        accounts: [{
+            accountName: 'my account',
+        }],
+    });
+});
+
 // server is started on localhost port 3000
 // localhost:3000
 // our endpoints will be concatenated to the base URL
