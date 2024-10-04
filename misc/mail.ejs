@@ -1,155 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update in <%= context.repo.owner %>/<%= context.repo.repo %></title>
-    <style>
-        p, h1, a {
-            margin: 0;
-            color: #1E1E1E;
-            text-decoration: none;
-        }
-
-        a > span {
-            text-decoration: underline;
-            text-underline-offset: 4px;;
-        }
-
-        .icon {
-            vertical-align: text-top;
-        }
-
-        a {
-            white-space: nowrap;
-            vertical-align: baseline;
-        }
-
-        main, .header, .change-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Inter', 'Arial', sans-serif;
-        }
-
-        main {
-            margin: 100px 0px;
-            gap: 64px;
-        }
-
-        .header {
-            gap: 24px;
-        }
-
-        .change-container {
-            gap: 8px;
-        }
-
-        .header > img {
-            max-width: 250px;
-            border-radius: 30px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 24px;
-        }
-
-        .author {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        .author > img {
-            border-radius: 100%;
-        }
-
-        .change {
-            max-width: 500px;
-            white-space: initial;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #d9d9d9;
-            padding: 24px;
-            gap: 8px;
-        }
-        
-        .change .state {
-            padding: 8px 12px;
-            background-color: #8957E5;
-            color: white;
-            border-radius: 100px;
-            text-transform: capitalize;
-        }
-
-        .change-container .link {
-            width: 20px;
-        }
-
-        .disclaimer {
-            max-width: 500px;
-            text-align: center;
-        }
-
-        @media screen and (max-width: 400px) {
-            .repo > .username {
-                display: none;
-            }
-
-            .change {
-                flex-direction: column;
-            }
-
-            .change {
-                text-align: center;
-            }
-        }
-
+    <title>Updates in <%= context.repo.owner %>/<%= context.repo.repo %></title>
+    <style type="text/css">
+      @media screen and (max-width: 400px) {
+          .repo > .username {
+              display: none;
+          }
+          .change {
+              flex-direction: column;
+          }
+          .change {
+              text-align: center;
+          }
+      }
     </style>
-</head>
-<body>
-    <main>
-        <div class="header">
-            <img src="./assets/logo-2.png" alt="">
-
-            <h1>New update in 
-                <a href="https://github.com/<%= context.repo.owner %>/<%= context.repo.repo %>">
-                    <img class="icon" width="24px" src="./assets/github.svg" alt="">
-                    <span class="repo">
-                        <span class="username"><%= context.repo.owner %></span>
-                        /
-                        <span><%= context.repo.repo %></span>
-                    </span>
-                </a>
-            </h1>
-    
-            <div class="author">
-                <img src="https://avatars.githubusercontent.com/u/48653383?v=4&size=32" alt="">
-                <p><%= context.repo.owner %></p>
-            </div>
+  </head>
+  <body>
+    <main style="display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Inter', 'Arial', sans-serif;margin:100px 0px;gap:64px;">
+      <div class="header" style="display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Inter', 'Arial', sans-serif;gap:24px;">
+        <img src="./assets/logo-2.png" alt="" style="max-width:250px;border-radius:30px;">
+        <h1 style="margin:0;color:#1E1E1E;text-decoration:none;text-align:center;font-size:24px;">Update in 
+          <a href="https://github.com/<%= context.repo.owner %>/<%= context.repo.repo %>" style="margin:0;color:#1E1E1E;text-decoration:none;white-space:nowrap;vertical-align:baseline;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_88_527)">
+              <path d="M9 18.9994C4 20.4994 4 16.4994 2 15.9994M16 21.9994V18.1294C16.0375 17.6526 15.9731 17.1733 15.811 16.7232C15.6489 16.2732 15.3929 15.8629 15.06 15.5195C18.2 15.1695 21.5 13.9794 21.5 8.51945C21.4997 7.12328 20.9627 5.78065 20 4.76945C20.4559 3.54796 20.4236 2.1978 19.91 0.999449C19.91 0.999449 18.73 0.649449 16 2.47945C13.708 1.85827 11.292 1.85827 9 2.47945C6.27 0.649449 5.09 0.999449 5.09 0.999449C4.57638 2.1978 4.54414 3.54796 5 4.76945C4.03013 5.78815 3.49252 7.14291 3.5 8.54945C3.5 13.9694 6.8 15.1594 9.94 15.5494C9.611 15.8894 9.35726 16.2949 9.19531 16.7394C9.03335 17.1839 8.96681 17.6575 9 18.1294V21.9994" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_88_527">
+              <rect width="24" height="24" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>              
+            <span class="repo" style="text-decoration:underline;text-underline-offset:4px;">
+              <span class="username"><%= context.repo.owner %></span>
+              /
+              <span><%= context.repo.repo %></span>
+            </span>
+          </a>
+        </h1>
+        <div class="author" style="display:flex;align-items:center;gap:8px;font-weight:bold;font-size:16px;">
+          <img src="https://avatars.githubusercontent.com/u/48653383?v=4&size=32" alt="" style="border-radius:100%;">
+          <p style="margin:0;color:#1E1E1E;text-decoration:none;"><%= context.repo.owner %></p>
         </div>
-
-        <div class="change-container">
-            <a href="<%= prLink %>" class="change">
-                <p class="state"><%= prState %></p>
-    
-                <p><%= prTitle %></p>
-            </a>
-    
-            <a href="<%= prLink %>/files">
-                <span>View changes</span>
-                <img class="icon" width="16px" src="./assets/external-link.svg" alt="">
-            </a>
-        </div>
-
-        <p class="disclaimer">
-            This is an automated email notification sent to students of Webtech@CSIE '24. Feel free to reply to this email or via Github Comments for any questions.
-        </p>
+      </div>
+      <div class="change-container" style="display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Inter', 'Arial', sans-serif;gap:8px;">
+        <a href="<%= prLink %>" class="change" style="margin:0;color:#1E1E1E;text-decoration:none;white-space:nowrap;vertical-align:baseline;max-width:500px;white-space:initial;display:flex;align-items:center;justify-content:center;background-color:#d9d9d9;padding:24px;gap:8px;">
+          <p class="state" style="margin:0;color:#1E1E1E;text-decoration:none;padding:8px 12px;background-color:#8957E5;color:white;border-radius:100px;text-transform:capitalize;"><%= prState %></p>
+          <p style="margin:0;color:#1E1E1E;text-decoration:none;"><%= prTitle %></p>
+        </a>
+        <a href="<%= prLink %>/files" style="margin:0;color:#1E1E1E;text-decoration:none;white-space:nowrap;">
+          <span style="text-decoration:underline;text-underline-offset:4px;">View changes</span>
+          <svg width="16" height="16" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+            <path d="M17 12V18C17 18.5304 16.7893 19.0391 16.4142 19.4142C16.0391 19.7893 15.5304 20 15 20H4C3.46957 20 2.96086 19.7893 2.58579 19.4142C2.21071 19.0391 2 18.5304 2 18V7C2 6.46957 2.21071 5.96086 2.58579 5.58579C2.96086 5.21071 3.46957 5 4 5H10M14 2H20M20 2V8M20 2L9 13" stroke="#1E1E1E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>            
+        </a>
+      </div>
+      <p class="disclaimer" style="margin:0;color:#1E1E1E;text-decoration:none;max-width:500px;text-align:center;">
+        This is an automated email notification sent to students of Webtech@CSIE '24. Feel free to reply to this email or via Github Comments for any questions.
+      </p>
     </main>
-</body>
+  </body>
 </html>
