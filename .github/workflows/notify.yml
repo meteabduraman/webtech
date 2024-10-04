@@ -26,7 +26,7 @@ jobs:
             {
               "prLink": "${{steps.PR.outputs.pr_url}}",
               "prState": "${{fromJson(steps.PR.outputs.pr).state}}",
-              "prTitle": "${{steps.PR.outputs.pr_title}}",
+              "prTitle": "${{steps.PR.outputs.pr_title}}"
             }
 
       - name: Notify
