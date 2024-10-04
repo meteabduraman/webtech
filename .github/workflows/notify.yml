@@ -17,10 +17,10 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
 
-      - name: action-ejs
+      - name: Render HTML
         uses: jaywcjlove/action-ejs@v2.0.0
         with:
-          template-file: misc/mail.html
+          template-file: misc/mail.ejs
           token: ${{secrets.GITHUB_TOKEN}}
           vars: |
             {
