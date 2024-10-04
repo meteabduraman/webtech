@@ -21,6 +21,7 @@ jobs:
         uses: jaywcjlove/action-ejs@v2.0.0
         with:
           template-file: misc/mail.ejs
+          output: misc/mail.html
           token: ${{secrets.GITHUB_TOKEN}}
           vars: |
             {
