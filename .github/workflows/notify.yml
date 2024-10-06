@@ -1,0 +1,45 @@
+name: Notify via email
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.0
+
+      - name: Get PR
+        uses: 8BitJonny/gh-get-current-pr@3.0.0
+        id: PR
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+
+      - name: Render HTML
+        uses: jaywcjlove/action-ejs@v2.0.0
+        with:
+          template-file: .github/workflows/mail.ejs
+          output: mail.html
+          token: ${{secrets.GITHUB_TOKEN}}
+          vars: |
+            {
+              "prLink": "${{steps.PR.outputs.pr_url}}",
+              "prState": "${{fromJson(steps.PR.outputs.pr).state}}",
+              "prTitle": "${{steps.PR.outputs.pr_title}}"
+            }
+
+      - name: Notify
+        if: success()
+        uses: dawidd6/action-send-mail@v3.12.0
+        with:
+          server_address: ${{secrets.SERVER_ADDRESS}}
+          server_port: 465
+          username: ${{secrets.USERNAME}}
+          password: ${{secrets.PASSWORD}}
+          subject: ${{secrets.SUBJECT}}
+          to: ${{secrets.TO}}
+          from: ${{secrets.FROM}}
+          html_body: file://mail.html
+          cc: ${{secrets.CC}}
