@@ -20,8 +20,8 @@ jobs:
       - name: Render HTML
         uses: jaywcjlove/action-ejs@v2.0.0
         with:
-          template-file: misc/mail2.ejs
-          output: misc/mail.html
+          template-file: .github/workflows/mail.ejs
+          output: mail.html
           token: ${{secrets.GITHUB_TOKEN}}
           vars: |
             {
@@ -41,5 +41,5 @@ jobs:
           subject: ${{secrets.SUBJECT}}
           to: ${{secrets.TO}}
           from: ${{secrets.FROM}}
-          html_body: file://misc/mail.html
+          html_body: file://mail.html
           cc: ${{secrets.CC}}
