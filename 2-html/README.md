@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+## Templating with HTML
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+HTML is one of the 3 building blocks of the web, giving the web page a structure. HTML is **not** a programming language, but rather a markup language similar to [Markdown](https://www.markdownguide.org/cheat-sheet/).
 
-## Available Scripts
+HTML documents are made up of **nodes** (elements) which have an *opening tag* (`<p>`, `<div>`, `<h1>`), *content* (either plain text or another node(s)), and *closing tag* (`</p>`, `</div>`, `</h1>`, although some elements might lack this, as `<img/>` does).
 
-In the project directory, you can run:
+> [> More about HTML elements](https://developer.mozilla.org/en-US/docs/Web/HTML/Element)
 
-### `npm start`
+Constructing a solid foundation/structure for a web page is important, but HTML generally also plays another big role in *A11Y (accessibility)*. With regards to this, we can categorize elements in 2 types:
+- those that **don't have an intrinsic meaning** (classic example of `div`: you know it's a group of something, but it does not convey the purpose or meaning of this group)
+- those that **do have an intrinsic meaning** (also known as **semantic tags**, e.g. `nav`, `main`, `article`, they're essentially also groups of elements, but their purpose is conveyed via the name of the element)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+> [> More about semantic elements](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#semantics_in_html)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The latter category provides insights for Screen Reader technologies which visually impaired persons use to navigate the web. These technologies recite the contents of the web document (nodes/elements present), so this is the relation between how visually impaired users perceive the web and the HTML we use to build it.
 
-### `npm test`
+> [> MDN Definition of a Screen Reader](https://developer.mozilla.org/en-US/docs/Glossary/Screen_reader)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Key takeaways and advice for using HTML elements:
+- [x] Always question whether a `div` can be converted to a semantic element, it's not guaranteed that it will always be the case though
+- [x] Do not rely on the initial appearance of an element to decide whether it's suitable or not (e.g. "`h1` is too big, I'll use `h4` for my main heading"/"In the prototype, this does not look like a button, but the user is expected to click on this, I'll just add a `div`"), make sure to take into account the meaning and interaction behind the element and control it's appearance via CSS
+- [x] Always question whether a piece of HTML can be "componentized" and reused
 
-### `npm run build`
+### On templating
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Generally, when we'll write HTML documents, it won't contain hardcoded text, but rather placeholders for variables (e.g. showing the user's name, account balance, or others). In this sense, we can say we'll write **templates**.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For a news article fragment, e.g., a potential reusable template can be:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```jsx
+<main>
+    <h1>{article.title}</h1>
+    <div>
+        <p>Written by</p>
+        <img src={article.author.avatarUrl} alt=""/>
+        <p>{article.author.name}</p>
+        <p>on {article.date}</p>
+    </div>
+    ...
+</main>
+```
 
-### `npm run eject`
+HTML is simply a markup language, so variables are not a thing here. But that's where frontend frameworks similar to `React` come in. More on frontend and React will follow in the upcoming labs.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### In the lab
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+We scaffolded our first React app and added a template corresponding to the **Account Overview: Home** screen of the Figma file on online.ase.ro.  In the next labs we'll try to request the data from an API, and then style it a bit. 🤓
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Along the way, we used the following commands:
+* `npx create-react-app bank` to scaffold the project (yes to everything)
+* `npm start` to start the app and check the template we built, it automatically opens the browser on `localhost:3000` where our app is living
