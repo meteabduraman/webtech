@@ -41,6 +41,23 @@ function App() {
       </div>
 
       <h2>Your accounts with us</h2>
+
+      {
+        // one of the ways to conditionally render in React
+        // this renders the right-side operand if the left-side operand is true
+        // https://react.dev/learn/conditional-rendering#logical-and-operator-
+        // there are more ways to do this, including using the ternary operator
+        // and using if-statements when this is it's own component
+        accounts.length === 0 && <p>You don't have any accounts</p>
+
+        // we're using the strict equality operator `===`
+        // always try to use this when comparing stuff
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Strict_equality
+        // the `.length` property is added by default in all JS Arrays
+        // it's a property, not a function as in Python (`len(list)`)
+        // or a method as in Java ArrayLists (`.size()`)
+      }
+
       {
         // `map` is a method of JS lists
         // that allows the iteration of their elements
