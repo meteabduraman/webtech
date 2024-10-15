@@ -22,8 +22,16 @@ app.get('/accounts', (req, res) => {
     // a JSON response can be sent simply via `.json()`
     res.status(200).json({
         accounts: [{
-            accountName: 'my account',
-        }],
+            name: 'Current account',
+            iban: 'RO00 AIEN 0000 0000 0000 0001',
+            balance: '5,831.21',
+            currency: 'RON',
+          }, {
+            name: 'Savings account',
+            iban: 'RO00 AIEN 0000 0000 0000 0002',
+            balance: '200.90',
+            currency: 'RON',
+          }],
     });
 });
 
