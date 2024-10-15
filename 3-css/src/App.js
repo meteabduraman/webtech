@@ -65,21 +65,37 @@ function App() {
         // or a method as in Java ArrayLists (`.size()`)
       }
 
-      {
-        // `map` is a method of JS lists
-        // that allows the iteration of their elements
-        // executing the callback for each element
-        accounts.map((account) => {
-          return (
-            <div>
-              <h3>{account.name}</h3>
-              <p>{account.iban}</p>
-              <p>{account.balance} {account.currency}</p>
-            </div>
-          )
-      })}
+      {/* we added a container on all the list items
+      classes in React should be specified with `className`,
+      normal `class` works too, but there will be an error in the console
+      about it */}
+      <div className="account-container">
+        {
+          // `map` is a method of JS lists
+          // that allows the iteration of their elements
+          // executing the callback for each element
+          accounts.map((account) => {
+            return (
+              // all list items must have a unique `key` when mapping them
+              // this ensures that updates of a list item don't affect
+              // the others, for us, this could be the iban, or an `accountId`
+              // if we'd have one
+              <div className="account" key={account.iban}>
+                {/* we added another div that would wrap the h3 and p
+                because they needed to be aligned in a column, not
+                in a row as the account should be */}
+                <div className="account-id">
+                  <h3>{account.name}</h3>
+                  <p className="iban">{account.iban}</p>
+                </div>
+                <p>{account.balance} {account.currency}</p>
+              </div>
+            )
+        })}
+      </div>
     </>
   );
 }
 
 export default App;
+

@@ -36,3 +36,38 @@
     transform: rotate(360deg);
   }
 }
+
+h3, p {
+  margin: 0;
+}
+
+.account, .account-id {
+  display: flex;
+}
+
+.account {
+  justify-content: space-between;
+  align-items: center;
+  max-width: 670px;
+}
+
+.account-id {
+  flex-direction: column;
+  gap: 4px;
+}
+
+.account-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.iban {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+  color: #757575;
+}
+
+.account > p {
+  font-weight: bold;
+}
