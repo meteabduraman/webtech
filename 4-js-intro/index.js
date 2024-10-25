@@ -57,6 +57,14 @@ function transfer(transferDetails) {
         return account.iban === transferDetails.destinationIban;
     });
 
+    if (sourceAccountIdx === -1) {
+        throw new Error('Source IBAN does not exist in the database.');
+    }
+
+    if (destinationAccountIdx === -1) {
+        throw new Error('Destination IBAN does not exist in the database.');
+    }
+
     if (accounts[destinationAccountIdx].holderName !== transferDetails.beneficiaryName) {
         throw new Error('Beneficiary name does not match the name of the destination account holder.');
     }
