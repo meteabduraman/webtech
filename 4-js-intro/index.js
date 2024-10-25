@@ -25,6 +25,10 @@ function transfer(transferDetails) {
     // all start with `RO` or contain the standard amount of characters
     // of an IBAN
     // the null-check for now is enough
+    
+    // if this were an API endpoint,
+    // given one of the following null-checks fail,
+    // the API should respond with status code 400 Bad Request
     if (!transferDetails) {
         throw new Error('Transfer details should exist.');
     }
@@ -79,6 +83,7 @@ function transfer(transferDetails) {
     accounts[destinationAccountIdx].balance += transferDetails.amount;
 
     // we chose not to return anything right now
+    // if this were an API endpoint, it could respond with 200 OK if everything was fine
 }
 
 // our function call looks like below
