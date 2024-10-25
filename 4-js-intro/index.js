@@ -42,6 +42,10 @@ function transfer(transferDetails) {
         throw new Error('Amount should exist.');
     }
 
+    if (!transferDetails.beneficiaryName) {
+        throw new Error('Beneficiary name should exist.');
+    }
+
     // `.findIndex` is an Array method that basically finds the
     // index of the element for which the callback returns `true`
     // more about Array methods here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods
@@ -52,6 +56,10 @@ function transfer(transferDetails) {
     const destinationAccountIdx = accounts.findIndex((account) => {
         return account.iban === transferDetails.destinationIban;
     });
+
+    if (accounts[destinationAccountIdx].holderName !== transferDetails.beneficiaryName) {
+        throw new Error('Beneficiary name does not match the name of the destination account holder.');
+    }
 
     // check if the source account has balance to transfer the money
     if (accounts[sourceAccountIdx].balance < transferDetails.amount) {
@@ -72,6 +80,7 @@ transfer({
     sourceIban: 'RO00AIEN0000000000000001',
     destinationIban: 'RO00AIEN0000000000000002',
     amount: 10,
+    beneficiaryName: 'Not Mete',
 });
 
 // calling console.log to check if it worked or not
