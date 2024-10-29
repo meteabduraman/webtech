@@ -100,3 +100,7 @@ transfer({
 // we should see that the first account now has balance of 5
 // and the destination balance of 45
 console.log(accounts);
+
+// we exported this function so that we can also use it in
+// 5-js-async
+module.exports = transfer;
