@@ -72,3 +72,13 @@ You'll find here a list of terms and briefly explained concepts we will mention 
 | **hoisting** | Behaviour of moving all declarations to the current scope, it doesn't matter if you define a variable above a function which uses it or below [More...](https://developer.mozilla.org/en-US/docs/Glossary/Hoisting)
 | **Promise** | *a promise of a future value*, we can handle async operations through this object in JS [More...](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 | **async operation** | Executes asynchronously, does not block main execution of a program if it is a time-consuming task; this does not imply other *threads* since JS is single-threaded [More...](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing)
+
+### Backend ORMs
+| Term | Explanation
+| :--: | :--
+| Model | OOP representation of a table in a relational database [More...](https://sequelize.org/docs/v6/core-concepts/model-basics/)
+| Persistence | Restarting the application does not mean loosing the data [More...](https://www.mongodb.com/resources/basics/databases/data-persistence)
+| Deprecation | Action take by maintainers of a library to recommend against the usage of a certain version, given other newer versions exist [More...](https://www.baeldung.com/cs/deprecated-vs-obsolete)
+| `export` | Keyword used in JS Modules, allowing functions/variables/classes to be used in other places within the application [More...](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export)
+| Top-level await | Allows async functions to be awaited in the top-most level, given JS Modules are used [More...](https://v8.dev/features/top-level-await)
+| CRUD | *Create, Read, Update, Delete* denotes the operations one can perform on database entries
