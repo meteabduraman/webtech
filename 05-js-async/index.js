@@ -1,5 +1,5 @@
 const express = require('express');
-const transfer = require('../4-js-intro/index.js');
+const transfer = require('../04-js-intro/index.js');
 const bodyParser = require('body-parser');
 const app = express();
 
@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.post('/transfer', (req, res) => {
     try {
         // we call the transfer function we implemented
-        // in 4-js-intro and pass it the data from the body
+        // in 04-js-intro and pass it the data from the body
         // of the request
         // this is wrapped in a try-catch statement to handle
         // the validation errors it includes

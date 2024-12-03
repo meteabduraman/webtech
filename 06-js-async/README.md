@@ -1,6 +1,6 @@
 ## Async JavaScript
 
-See [Async JS Concepts from the previous lab](../5-js-async/README.md).
+See [Async JS Concepts from the previous lab](../05-js-async/README.md).
 
 ### In the lab
 

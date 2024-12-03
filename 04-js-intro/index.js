@@ -102,5 +102,5 @@ transfer({
 console.log(accounts);
 
 // we exported this function so that we can also use it in
-// 5-js-async
+// 05-js-async
 module.exports = transfer;

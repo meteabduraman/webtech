@@ -1,4 +1,4 @@
-// copy pasted from 4-js-intro
+// copy pasted from 04-js-intro
 // removed the function call and console.log statement
 
 // imagine this array is our DB
@@ -90,5 +90,5 @@ function transfer(transferDetails) {
 }
 
 // we exported this function so that we can also use it in
-// 5-js-async
+// 05-js-async
 module.exports = transfer;
