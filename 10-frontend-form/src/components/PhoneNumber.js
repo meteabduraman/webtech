@@ -1,42 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const API_BASE_URL = 'https://bank-api-fltw.onrender.com';
 const JWT = '-- see instructions on how to get a JWT to place here in the README.md --';
 
-export function PhoneNumber() {
-    const [phoneNumber, setPhoneNumber] = useState('');
+// the params of this function are actually the props
+export function PhoneNumber({ user }) {
     const [error, setError] = useState(undefined);
     const [startedChangeProcess, setStartedChangeProcess] = useState(false);
     const [orderId, setOrderId] = useState('');
-
-    // first, let's bring in the accounts from an API
-    useEffect(() => {
-        // according to the swagger, this endpoint will require an Access Token
-        // so we'll need to get one prior to calling it
-        fetch(`${API_BASE_URL}/users/me`, {
-            headers: {
-                'Authorization': `Bearer ${JWT}`,
-            },
-        })
-            .then((res) => {
-                // `ok` is already found on the response object
-                // it's true if the status code is between 200-299
-                // https://developer.mozilla.org/en-US/docs/Web/API/Response/ok
-                if (!res.ok) {
-                    throw new Error(`Response failed with status code ${res.status}`);
-                }
-
-                return res;
-            })
-            .then((res) => res.json())
-            // according to the swagger, this endpoint responds
-            // with 200 and a body with property phoneNumber
-            .then((body) => setPhoneNumber(body.phoneNumber))
-            .catch((e) => setError(e));
-
-    // don't forget the empty array here
-    // so that the effect is only executed once
-    }, []);
 
     function startChangeProcess() {
         // we use the setter to tweak the state
@@ -129,8 +100,8 @@ export function PhoneNumber() {
             <h1>Change your phone number</h1>
             <p>some long description about this process</p>
 
-            <p>Your current phone number:</p>
-            <p>{phoneNumber}</p>
+            <p>{user?.name}'s current phone number:</p>
+            <p>{user?.phoneNumber}</p>
 
             {/* when the user clicks on this button,
             the function passed there gets executed */}
