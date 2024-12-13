@@ -135,6 +135,12 @@ export function Accounts() {
 ```
 The concept of a state manager is something that can be very useful, but often including it in small projects is not feasible enough (does not bring enough value for the effort), therefore it's recommended you use it for big projects with a lot of state.
 
+### Using a Component Library
+
+Component libraries are shortcuts for not building your own atomic HTML elements style-wise. They come styled out of the box. There are many component libraries compatible with React and you'll need to follow their instructions for installing and using them.
+
+Do make use of component libraries in case you want to focus on the functionality of your app and not the minute style details of the HTML elements. Of course, you can also create your own styles and components, but it generally takes time and a lot of effort.
+
 ## In the lab
 
 We scaffolded a React app using `vite` this time (the current recommended way), not by using `create-react-app`. `vite` is a build tool helping build frontend projects (https://vite.dev/).
@@ -148,3 +154,11 @@ We installed the dependencies allowing us to use a redux store:
 Afterwards, we created a `<PhoneNumber>` component which we want to connect to a global state. We created the `phoneNumberSlice` with the `change` action, we then added it to our store. We dispatched the action upon a button click in the `<PhoneNumber>` component and we saw the state change.
 
 > Note: since we created the project with `vite`, now the app can be started by running `npm run dev`, see the `package.json` scripts for more
+
+We also made use of the `Chakra UI` component library, using a button imported from there instead of the native HTML one.
+
+> [> Chakra UI](https://www.chakra-ui.com/)
+
+> [> ShadCDN UI](https://ui.shadcn.com/)
+
+> [> Ant Design UI](https://ant.design/)

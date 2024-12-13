@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { change } from '../state/slices/phoneNumber.js';
+import { Button } from '@chakra-ui/react';
 
 export function PhoneNumber() {
     // we take the value out of the slice
@@ -16,7 +17,7 @@ export function PhoneNumber() {
             <p>Your phone number</p>
             <p>{phoneNumber}</p>
 
-            <button onClick={changePhoneNumber}>Change phone number</button>
+            <Button onClick={changePhoneNumber}>Change phone number</Button>
         </div>
     )
 }
