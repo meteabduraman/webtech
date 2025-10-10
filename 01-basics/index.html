@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unusual payment</title>
+    <style>
+        h1 {
+            color: blue;
+            text-align: center;
+        }
+
+        #closeBtn {
+            background-color: blue;
+            border-radius: 50px;
+            padding: 0 8px;
+            margin: 40px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Call us!</h1>
+    <img src="https://www.svgrepo.com/show/217682/call-center.svg" alt="" width="200px">
+    <p>Call us now at <b>00 000 000 000</b>. You can also find this number in the app.</p>
+    <button id="closeBtn">Close</button>
+
+    <script>
+        const btn = document.getElementById('closeBtn');
+
+        btn.addEventListener('click', () => {
+            console.log('button was clicked');
+        });
+    </script>
+</body>
+
+</html>
