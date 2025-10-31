@@ -12,3 +12,4 @@ You'll find here a list of terms and briefly explained concepts we will mention 
 | **DOM** | *Document Object Model* - object tree representation of the document [More...](https://developer.mozilla.org/en-US/docs/Glossary/DOM)
 | **HTTP** | *Hyper-Text Transfer Protocol* - protocol used on the internet, defines client-server communication [More...](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 | **API** | *Application Programming Interface* - interface of an app or library, in the labs we will use it to describe the backend [More...](https://developer.mozilla.org/en-US/docs/Glossary/API)
+| **ORM** | *Object Relational Mapper* - maps/translates the table structure of a DB to objects, and vice-versa
