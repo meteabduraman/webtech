@@ -10,3 +10,5 @@ You'll find here a list of terms and briefly explained concepts we will mention 
 | **CSS** | *Cascading Style Sheets* - language used to describe styling of documents [More...](https://developer.mozilla.org/en-US/docs/Web/CSS)
 | **JS** | *JavaScript* - programming language used to provide functionality to web apps [More...](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 | **DOM** | *Document Object Model* - object tree representation of the document [More...](https://developer.mozilla.org/en-US/docs/Glossary/DOM)
+| **HTTP** | *Hyper-Text Transfer Protocol* - protocol used on the internet, defines client-server communication [More...](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+| **API** | *Application Programming Interface* - interface of an app or library, in the labs we will use it to describe the backend [More...](https://developer.mozilla.org/en-US/docs/Glossary/API)
