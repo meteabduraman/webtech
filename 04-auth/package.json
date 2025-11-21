@@ -1,0 +1,15 @@
+{
+  "name": "04-auth",
+  "version": "1.0.0",
+  "description": "Authentication is an important part of the functionality of most apps. Basically it is the answer to the question *Who?* when talking about either requesting resources from an API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
