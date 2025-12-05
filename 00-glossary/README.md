@@ -13,3 +13,5 @@ You'll find here a list of terms and briefly explained concepts we will mention 
 | **HTTP** | *Hyper-Text Transfer Protocol* - protocol used on the internet, defines client-server communication [More...](https://developer.mozilla.org/en-US/docs/Web/HTTP)
 | **API** | *Application Programming Interface* - interface of an app or library, in the labs we will use it to describe the backend [More...](https://developer.mozilla.org/en-US/docs/Glossary/API)
 | **ORM** | *Object Relational Mapper* - maps/translates the table structure of a DB to objects, and vice-versa
+| **SPA** | *Single Page App* - frontend architecture which implies having a single HTML file which the app dynamically adjusts the content of [More...](https://developer.mozilla.org/en-US/docs/Glossary/SPA)
+| **DOM** | *Document Object Model* - allows manipulation of the HTML document contents [More...](https://developer.mozilla.org/en-US/docs/Glossary/DOM)
