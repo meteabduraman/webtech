@@ -15,3 +15,5 @@ You'll find here a list of terms and briefly explained concepts we will mention 
 | **ORM** | *Object Relational Mapper* - maps/translates the table structure of a DB to objects, and vice-versa
 | **SPA** | *Single Page App* - frontend architecture which implies having a single HTML file which the app dynamically adjusts the content of [More...](https://developer.mozilla.org/en-US/docs/Glossary/SPA)
 | **DOM** | *Document Object Model* - allows manipulation of the HTML document contents [More...](https://developer.mozilla.org/en-US/docs/Glossary/DOM)
+| **URL** | *Uniform Resource Locator* - serves as a way to specify resources, if a computer's adress is it's IP Address, a resource's address is a URL [More...](https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL)
+| **REST** | *Representational State Transfer* - set of architectural constraints to follow when designing an API backend, to ensure efficiency, reliability and scalability [More...](https://developer.mozilla.org/en-US/docs/Glossary/REST)
